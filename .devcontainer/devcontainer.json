@@ -1,0 +1,11 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
+{
+	"name": "Ubuntu",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/base:jammy",
+	"forwardPorts": [
+		11434
+	],
+	"postCreateCommand": "curl https://ollama.ai/install.sh | sh && (ollama serve > /tmp/ollama.log 2>&1 &) && sleep 10 && ollama pull codeqwen > /tmp/ollama_setup.log 2>&1 && cat /tmp/ollama_setup.log",
+}
