@@ -1,0 +1,17 @@
+{
+	"name": "Default Linux Universal",
+	"image": "mcr.microsoft.com/devcontainers/universal:2-linux",
+	"features": {
+	},
+	"forwardPorts": [
+		11434
+	],
+	"postCreateCommand": "curl https://ollama.ai/install.sh | sh && (ollama serve > /tmp/ollama.log 2>&1 &) && sleep 10 && ollama pull codeqwen > /tmp/ollama_setup.log 2>&1 && cat /tmp/ollama_setup.log",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"continue.continue"
+			]
+		}
+	}
+}
